@@ -1,2 +1,16 @@
 Test/Tryout WinHTTP
 
+
+Windows 32/64 warning!
+
+Windows 64 bit (i.e. Windows 7/2008) has independent registry settings
+for 32 bit and 64 programs. 
+
+Hence to change the registry settings for the proxy settings 
+(ex. to use Fiddler with WinHTTP) call netsh from corresponding cmd prompt:
+
+C:\Windows\SysWOW64\cmd.exe (for Win32 apps)
+C:\Windows\System32\cmd.exe (for Win64 apps, counter intuitive but true)
+
+To import settings from Internet Explorer (IE) call:
+[CMD from above] netsh winhttp import proxy ie
